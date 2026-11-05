@@ -173,6 +173,7 @@ public abstract class CachedStreamTestBase extends Assert {
             EasyMock.expect(b.getProperty("bus.io.CachedOutputStream.Threshold")).andReturn("4");
             EasyMock.expect(b.getProperty("bus.io.CachedOutputStream.MaxSize")).andReturn(null);
             EasyMock.expect(b.getProperty("bus.io.CachedOutputStream.CipherTransformation")).andReturn(null);
+            EasyMock.expect(b.getExtension(CachedOutputStreamCleaner.class)).andReturn(null).anyTimes();
         
             BusFactory.setThreadDefaultBus(b);
             
